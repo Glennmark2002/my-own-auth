@@ -5,6 +5,7 @@ import path from 'path'
 
 import authRoutes from './routes/auth.route.js'
 
+const __dirname = path.resolve();
 const app = express(); 
 dotenv.config();
 
