@@ -8,6 +8,15 @@ export const run = (req, res) => res.json({ message: 'Your API is working!' });
 
 export const signup = async (req, res, next) => {
   
+  const isExisting = await User.findOne({ email: req.body.email});  
+  
+  // if(isExisting) {
+  //   console.log('User is already registered');  
+  //   return
+  // }
+
+  console.log('test');
+
   const { username, email, password } = req.body;  
   const hashedPassword = bcryptjs.hashSync(password, 1);
   const newUser = new User({ username, email, password:hashedPassword });

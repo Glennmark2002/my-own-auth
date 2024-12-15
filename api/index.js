@@ -1,6 +1,7 @@
 import express from 'express'; 
 import mongoose from 'mongoose'; 
 import dotenv from 'dotenv';
+import cors from 'cors'
 
 import authRoutes from './routes/auth.route.js'
 
@@ -13,6 +14,15 @@ try {
 } catch (error) {
   console.log('Connection failed');
 }
+
+
+try {
+  app.use(cors); 
+} catch (error) {
+  console.log(error);  
+}
+
+app.use(cors); 
 app.use(express.json());
 app.listen(3000, () => console.log('Running')) 
 app.use('/api/auth', authRoutes);
