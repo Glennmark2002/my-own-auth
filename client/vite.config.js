@@ -6,8 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        // target: 'http://localhost:3000',
-        target: 'https://my-own-auth.onrender.com', 
+        target: 'http://localhost:3000',
         secure: false,
       },
     },
