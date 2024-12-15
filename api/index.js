@@ -14,13 +14,6 @@ try {
   console.log('Connection failed');
 }
 
-
-try {
-  app.use(cors); 
-} catch (error) {
-  console.log(error);  
-}
-
 app.use(express.json());
 app.listen(3000, () => console.log('Running')) 
 app.use('/api/auth', authRoutes);
